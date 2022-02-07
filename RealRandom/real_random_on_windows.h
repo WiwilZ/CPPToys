@@ -15,6 +15,7 @@ inline void random_buffer(void* buffer, size_t size) {
         throw std::runtime_error("crypt acquire context error");
     }
     CryptGenRandom(handle, static_cast<DWORD>(size), static_cast<BYTE*>(buffer));
+    CryptReleaseContext(handle, 0);
 }
 
 template<typename T>
