@@ -1,19 +1,10 @@
-//
-// Created by WiwilZ on 2022/2/2.
-//
-
 #pragma once
 
 #include <bit>
 #include <numeric>
 #include <compare>
 #include <cstdint>
-
-#if defined(_MSC_VER)
-#include <intrin.h>
-#else
 #include <x86intrin.h>
-#endif
 
 
 std::strong_ordering sse2_strcmp(const char* s1, const char* s2) noexcept __attribute_pure__ __nonnull ((1, 2));
