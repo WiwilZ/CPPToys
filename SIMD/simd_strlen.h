@@ -1,17 +1,9 @@
-//
-// Created by WiwilZ on 2022/1/31.
-//
-
 #pragma once
 
 #include <bit>
 #include <cstdint>
-
-#if defined(_MSC_VER)
-#include <intrin.h>
-#else
 #include <x86intrin.h>
-#endif
+
 
 constexpr size_t sse2_strlen(const char* str) noexcept __attribute_pure__ __nonnull ((1));
 
@@ -20,7 +12,6 @@ constexpr size_t sse4_strlen(const char* str) noexcept __attribute_pure__ __nonn
 constexpr size_t avx2_strlen(const char* str) noexcept __attribute_pure__ __nonnull ((1));
 
 constexpr size_t avx512_strlen(const char* str) noexcept __attribute_pure__ __nonnull ((1));
-
 
 
 constexpr size_t sse2_strlen(const char* str) noexcept {
