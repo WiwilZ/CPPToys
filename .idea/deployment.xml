@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="remote (f6fbe938-c91f-4d57-8bae-31298de597b4)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.jusxj8ckoh" local="$PROJECT_DIR$/MemoryManager" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/MemoryManager/cmake-build-release" />
+            <excludedPath local="true" path="$PROJECT_DIR$/MemoryManager/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
