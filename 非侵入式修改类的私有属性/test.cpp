@@ -1,17 +1,14 @@
-﻿#include <iostream>
-
-
-using namespace std;
+#include <iostream>
 
 
 class Bank {
 private:
-	double money = 99'9999;
+    double money = 9999;
 
 public:
-	void check() const {
-		std::cout << "money: " << money << std::endl;
-	}
+    void check() const {
+        std::cout << "money: " << money << std::endl;
+    }
 };
 
 
@@ -20,27 +17,27 @@ struct Tunnel;
 
 template <typename T, typename U, T U::* M>
 struct Tunnel<M> {
-	friend T& sneak(U& u) {
-		return u.*M;
-	}
+    friend T& sneak(U& u) {
+        return u.*M;
+    }
 };
 
 
-template struct Tunnel<&Bank::money>;
+template
+struct Tunnel<&Bank::money>;
 double& sneak(Bank&);
 
 
 int main() {
+    Bank bank;
 
-	Bank bank;
+    std::cout << "[before]";
+    bank.check();
 
-	std::cout << "[before]";
-	bank.check();
+    sneak(bank) = 1;
+    std::cout << "[after]";
+    bank.check();
 
-	sneak(bank) = 0.1;
-	std::cout << "[after]";
-	bank.check();
-
-	return 0;
+    return 0;
 }
 
